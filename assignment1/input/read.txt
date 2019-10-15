@@ -1,0 +1,7 @@
+1. tar -zxvf make_input.tar.gz 로 압축풀기
+    - make_input.cc
+    - Makefile
+2. make 로 make_input program 생성
+    - make_input
+3. ./make_input [file_name] [row_size] [col_size] [min_value] [max_value] [seed] 로 input data file 생성하기
+
