@@ -4,10 +4,11 @@
 #include <cstring>
 #include <ctime>
 #include <cstdio>
+#include <cstdlib>
 using namespace std;
 
-void sort_1(vector<int>& num, int n) {
-	for (int i = 1; i <= n; ++i) {
+void sort_1(vector<int>& num, int l, int r) {
+	for (int i = l; i <= r; ++i) {
 		for (int j = i - 1; j > 0; --j) {
 			if (num[j] > num[j + 1]) swap(num[j], num[j + 1]);
 			else break;
@@ -54,12 +55,42 @@ void sort_3(vector<int>& num, vector<int>& temp, int l, int r) {
 	while (ri <= r) num[i++] = temp[ri++];
 }
 
-void sort_4(vector<int>& num, int n) {}
+void sort_4(vector<int>& num, int l, int r) {
+	int l_pivot = l + 1, r_pivot = r - 1, l_val, r_val;
+
+	if (l < r) {
+		int rand_idx = rand() % (r - l + 1) + l;
+		swap(num[l], num[rand_idx]);
+		rand_idx = rand() % (r - l + 1) + l;
+		swap(num[r], num[rand_idx]);
+
+		if (num[l] > num[r]) swap(num[l], num[r]);
+		l_val = num[l], r_val = num[r];
+
+		for (int i = l + 1; i <= r_pivot; ++i) {
+			if (num[i] < l_val) swap(num[i], num[l_pivot++]);
+			else if (num[i] > r_val) swap(num[i--], num[r_pivot--]);
+		}
+		swap(num[l], num[--l_pivot]);
+		swap(num[r], num[++r_pivot]);
+
+		if (l_pivot - l <= 32) sort_1(num, l, l_pivot - 1);
+		else sort_4(num, l, l_pivot - 1);
+
+		if (r_pivot - l_pivot - 1 <= 32) sort_1(num, l_pivot + 1, r_pivot - 1);
+		else sort_4(num, l_pivot + 1, r_pivot - 1);
+
+		if (r - r_pivot <= 32) sort_1(num, r_pivot + 1, r);
+		else sort_4(num, r_pivot + 1, r);
+	}
+}
 
 int main(int argc, char* argv[]) {
 	//int main() {
 	cin.tie(NULL); cout.tie(NULL);
 	ios_base::sync_with_stdio(false);
+
+	srand(time(NULL));
 
 	freopen(argv[1], "r", stdin);
 	char res_file[50] = "result_";
@@ -85,7 +116,7 @@ int main(int argc, char* argv[]) {
 
 	switch (algo_id) {
 	case 1:
-		sort_1(num, n);
+		sort_1(num, 1, n);
 		break;
 
 	case 2:
@@ -97,7 +128,7 @@ int main(int argc, char* argv[]) {
 		break;
 
 	case 4:
-		sort_4(num, n);
+		sort_4(num, 1, n);
 		break;
 	}
 
