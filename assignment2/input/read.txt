@@ -3,4 +3,5 @@
     - Makefile
 2. make 로 make_input program 생성
     - make_input
-3. ./make_input [file_name] [array_size] [min_value] [max_value] [seed] 로 input data file 생성하기
+3. ./make_input [file_name] [array_size] [min_value] [max_value] [seed] [@order] 로 input data file 생성하기
+*** order is option // 0 or none => random order, 1 => increase order, -1 => decrease order
