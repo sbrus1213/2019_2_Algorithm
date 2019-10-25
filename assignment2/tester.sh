@@ -5,13 +5,14 @@ then
 	echo "Start testing..."
 	for input in $INPUTS
 	do
-		./$1 $input 1 
-		./$1 $input 2 
-		./$1 $input 3 
-		./$1 $input 4 
+		for arg in $*
+		do
+			./mp2_20141284 $input $arg
+		done
 		echo "make result file for "$input
 	done
 	echo "Finish testing!!!"
 else 
-	echo "please write [binary file name]"
+	echo "Program Manual - sh tester.sh [@algorithm_index]"
+	echo "please write algorithm_index"
 fi
