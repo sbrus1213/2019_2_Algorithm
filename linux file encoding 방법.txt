@@ -2,5 +2,5 @@ file charset 확인하는 법 : file -bi [file_name]
 
 encoding 된 file 새로 생성하는 법 : iconv -c -f [기존charset] -t [변경charset] [original_file] > [target_file]
 
-iconv -c -f euc-kr -t utf-8 algo_assignment_01.cpp > _algo_1.cpp
-iconv -c -f euc-kr -t utf-8 algo_assignment_02.cpp > _algo_2.cpp
+iconv -c -f euc-kr -t utf-8 algo_assignment_01.cpp > cse3081_mp1_20141284.cpp
+iconv -c -f euc-kr -t utf-8 algo_assignment_02.cpp > cse3081_mp2_20141284.cpp

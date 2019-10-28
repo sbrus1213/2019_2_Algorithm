@@ -1,7 +1,7 @@
 all: mp2_20141284
 
-mp2_20141284: _algo_2.cpp
-	g++ -o mp2_20141284 _algo_2.cpp
+mp2_20141284: cse3081_mp2_20141284.cpp
+	g++ -o mp2_20141284 cse3081_mp2_20141284.cpp
 
 clean :
 	rm mp2_20141284
