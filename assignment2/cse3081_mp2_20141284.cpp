@@ -12,7 +12,7 @@ using namespace std;
 #define Merge_Sort 3
 #define Improved_Sort 4
 
-void sort_1(vector<double> & num, int l, int r) {
+void sort_1(vector<int> & num, int l, int r) {
 	/*
 	O(n^2) 정렬 알고리즘 - Insertion Sort
 
@@ -42,7 +42,7 @@ void sort_1(vector<double> & num, int l, int r) {
 	}
 }
 
-void sort_2(vector<double>& num, int l, int r) {
+void sort_2(vector<int>& num, int l, int r) {
 	/*
 	O(nlogn) 정렬 알고리즘 - Quick Sort
 
@@ -70,8 +70,7 @@ void sort_2(vector<double>& num, int l, int r) {
 
 	// pivot 을 배열의 마지막 값으로 선정
 	// p_index 는 최종에 pivot이 위치할 곳을 결정해주기 위한 변수
-	int p_index = l;
-	double pivot = num[r];
+	int p_index = l, pivot = num[r];
 
 	if (l < r) {
 		for (int i = l; i < r; ++i) {
@@ -91,7 +90,7 @@ void sort_2(vector<double>& num, int l, int r) {
 	}
 }
 
-void sort_3(vector<double>& num, vector<double>& temp, int l, int r) {
+void sort_3(vector<int>& num, vector<int>& temp, int l, int r) {
 	/*
 	O(nlogn) 정렬 알고리즘 - Merge Sort
 
@@ -143,7 +142,7 @@ void sort_3(vector<double>& num, vector<double>& temp, int l, int r) {
 	while (ri <= r) num[i++] = temp[ri++];
 }
 
-void sort_4(vector<double>& num, int l, int r) {
+void sort_4(vector<int>& num, int l, int r) {
 	/*
 	Improved User Sort
 
@@ -173,8 +172,7 @@ void sort_4(vector<double>& num, int l, int r) {
 	// l_pivot - pivot 중 작은 값, r_pivot - pivot 중 큰 값
 	// lp_index - l_pivot 이 최종에 위치할 index
 	// rp_index - r_pivot 이 최종에 위치할 index
-	int lp_index = l + 1, rp_index = r - 1;
-	double l_pivot, r_pivot;
+	int lp_index = l + 1, rp_index = r - 1, l_pivot, r_pivot;
 
 	if (l < r) {
 
@@ -227,7 +225,7 @@ int main(int argc, char* argv[]) {
 	freopen(res_file, "w", stdout);
 
 	int n, algo_id;
-	vector<double> num, tmp;
+	vector<int> num, tmp;
 
 	clock_t start, end;
 
@@ -267,7 +265,6 @@ int main(int argc, char* argv[]) {
 	cout << n << '\n';
 	cout << fixed; cout.precision(6);
 	cout << ((double)end - start) / CLOCKS_PER_SEC << '\n';
-	cout << fixed; cout.precision(3);
 	for (int i = 1; i <= n; ++i) cout << num[i] << ' ';
 	cout << '\n';
 
