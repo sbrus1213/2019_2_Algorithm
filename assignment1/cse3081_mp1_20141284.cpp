@@ -82,6 +82,7 @@ int O_4_algorithm(vector<vector<int> >& num, int n, int m) {
 			int tmp_max = 0;
 
 			// 0번째 column의 i~j row 값의 합을 구하고 tmp_max로 설정
+			dp[0] = 0;
 			for (int l = i; l <= j; ++l) dp[0] += num[l][0];
 			tmp_max = dp[0];
 
