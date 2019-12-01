@@ -1,6 +1,5 @@
-file charset È®ÀÎÇÏ´Â ¹ý : file -bi [file_name]
+file charset í™•ì¸í•˜ëŠ” ë²• : file -bi [file_name]
 
-encoding µÈ file »õ·Î »ý¼ºÇÏ´Â ¹ý : iconv -c -f [±âÁ¸charset] -t [º¯°æcharset] [original_file] > [target_file]
+encoding ëœ file ìƒˆë¡œ ìƒì„±í•˜ëŠ” ë²• : iconv -c -f [ê¸°ì¡´charset] -t [ë³€ê²½charset] [original_file] > [target_file]
 
 iconv -c -f euc-kr -t utf-8 algo_assignment_01.cpp > cse3081_mp1_20141284.cpp
-iconv -c -f euc-kr -t utf-8 algo_assignment_02.cpp > cse3081_mp2_20141284.cpp
