@@ -1,0 +1,14 @@
+check.sh 는 shell프로그램으로 만들어졌으며, 알고리즘 2차 과제 test의 수행시간 체크를 위해 만들어졌습니다.
+모든 result_ txt 파일의 이름과 수행시간을 출력해준다.
+
+
+[사용법]
+	sh check.sh
+
+	*특정 알고리즘의 result_ txt 파일의 수행시간만 보고싶다면
+		vi check.sh
+		첫 줄에 result_*를 result_1_* 과 같이 특정 알고리즘의 번호를 넣어 수정해준다.
+
+
+[주의사항] 
+1) result_ 파일은 무조건 result_ 로 시작해야 합니다.
