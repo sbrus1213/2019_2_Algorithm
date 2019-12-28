@@ -7,7 +7,7 @@
 2. make 로 make_input program 생성
     - make_input
 
-3. ./make_input [!file_name] [!byte_size] [!see] [@flag] 로 input data file 생성하기
+3. ./make_input [!file_name] [!byte_size] [!seed] [@flag] 로 input data file 생성하기
 
 *** flag 를 입력하지 않으면 26을 제외한 0~128의 ascii 가 출력된다.
 *** flag 에 1을 입력하면 alphanumeric 문자인 소문자, 대문자, 숫자만으로 구성된 파일이 생성된다.
